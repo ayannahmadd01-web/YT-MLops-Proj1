@@ -1,40 +1,40 @@
 columns:
-  - id: int
-  - Gender: category
-  - Age: int
-  - Driving_License: int
-  - Region_Code: float
-  - Previously_Insured: int
-  - Vehicle_Age: category
-  - Vehicle_Damage: category
-  - Annual_Premium: float
-  - Policy_Sales_Channel: float
-  - Vintage: int
-  - Response: int
+  - satisfaction_level: float
+  - last_evaluation: float
+  - number_project: int
+  - average_montly_hours: float
+  - time_spend_company: float
+  - work_accident: int
+  - left: category
+  - promotion_last_5years: int
+  - is_smoker: category
+  - department: category
+  - salary: category
 
 
 numerical_columns:
-  - Age
-  - Driving_License
-  - Region_Code
-  - Previously_Insured
-  - Annual_Premium
-  - Policy_Sales_Channel
-  - Vintage
-  - Response
+  - satisfaction_level
+  - last_evaluation
+  - number_project
+  - average_montly_hours
+  - time_spend_company
+  - work_accident
+  - promotion_last_5years
+
 
 categorical_columns:
-  - Gender
-  - Vehicle_Age
-  - Vehicle_Damage
+  - left
+  - is_smoker
+  - department
+  - salary
+
 
 drop_columns: _id
 
 # for data transformation
 num_features:
-  - Age
-  - Vintage
+  - average_monthly_hours
 
 
-mm_columns:
-  - Annual_Premium
+# mm_columns:
+#   - Annual_Premium

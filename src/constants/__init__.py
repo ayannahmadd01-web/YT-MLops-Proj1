@@ -2,9 +2,9 @@ import os
 from datetime import date
 
 # For MongoDB connection
-DATABASE_NAME = "Proj1"
-COLLECTION_NAME = "Proj1-Data"
-MONGODB_URL_KEY = "MONGODB_URL"
+DATABASE_NAME = "Proj0"
+COLLECTION_NAME = "Proj0-Data"
+MONGODB_URL_KEY = "mongodb+srv://ayanahmadkhan1165_db_user:ayan123@cluster0.metp2qs.mongodb.net/Proj0?retryWrites=true&w=majority"
 
 PIPELINE_NAME: str = ""
 ARTIFACT_DIR: str = "artifact"
@@ -29,7 +29,7 @@ REGION_NAME = "us-east-1"
 """
 Data Ingestion related constant start with DATA_INGESTION VAR NAME
 """
-DATA_INGESTION_COLLECTION_NAME: str = "Proj1-Data"
+DATA_INGESTION_COLLECTION_NAME: str = "Proj0-Data"
 DATA_INGESTION_DIR_NAME: str = "data_ingestion"
 DATA_INGESTION_FEATURE_STORE_DIR: str = "feature_store"
 DATA_INGESTION_INGESTED_DIR: str = "ingested"

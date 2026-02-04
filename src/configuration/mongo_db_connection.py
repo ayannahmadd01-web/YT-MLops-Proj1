@@ -9,7 +9,11 @@ from src.constants import DATABASE_NAME, MONGODB_URL_KEY
 
 # Load the certificate authority file to avoid timeout errors when connecting to MongoDB
 ca = certifi.where()
-
+import os
+from dotenv import load_dotenv
+uri = "mongodb+srv://ayanahmadkhan1165_db_user:ayan123@cluster0.metp2qs.mongodb.net/Proj0?retryWrites=true&w=majority"
+# Load the .env file
+load_dotenv()
 class MongoDBClient:
     """
     MongoDBClient is responsible for establishing a connection to the MongoDB database.
@@ -44,14 +48,14 @@ class MongoDBClient:
             If there is an issue connecting to MongoDB or if the environment variable for the MongoDB URL is not set.
         """
         try:
-            # Check if a MongoDB client connection has already been established; if not, create a new one
-            if MongoDBClient.client is None:
-                mongo_db_url = os.getenv(MONGODB_URL_KEY)  # Retrieve MongoDB URL from environment variables
-                if mongo_db_url is None:
-                    raise Exception(f"Environment variable '{MONGODB_URL_KEY}' is not set.")
+        #     # Check if a MongoDB client connection has already been established; if not, create a new one
+        #     if MongoDBClient.client is None:
+        #         mongo_db_url = os.getenv('MONGODB_URL_KEY')  # Retrieve MongoDB URL from environment variables
+        #         if mongo_db_url is None:
+        #             raise Exception(f"Environment variable '{MONGODB_URL_KEY}' is not set.")
                 
-                # Establish a new MongoDB client connection
-                MongoDBClient.client = pymongo.MongoClient(mongo_db_url, tlsCAFile=ca)
+        #         # Establish a new MongoDB client connection
+            MongoDBClient.client = pymongo.MongoClient(uri, tlsCAFile=ca)
                 
             # Use the shared MongoClient for this instance
             self.client = MongoDBClient.client
